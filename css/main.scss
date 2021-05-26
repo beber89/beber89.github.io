@@ -16,13 +16,24 @@ body {
     width: 100%;
     box-sizing: border-box;
 
-    .logo {
+    .logo-part {
+        display: flex;
+        align-items: center;
         text-decoration: none;
         font-weight: bold;
         color: black;
-        font-size: 1.2em;
-        span {
-            color: var(--primary-color);
+        font-size: 1.4em;
+        .logo-text {
+            margin-bottom: 0.3em;
+            margin-left: 1em;
+            span {
+                color: var(--primary-color);
+            }
+        }
+        .logo {
+            img {
+                width: 2rem;
+            }
         }
     }
 
@@ -258,7 +269,7 @@ nav {
             font-weight: bold;
         }
 
-        li.go-premium-cta a {
+        li.getintouch-cta a {
             color: var(--primary-color);
             border: 3px solid var(--primary-color);
             font-weight: bold;
