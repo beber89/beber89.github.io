@@ -12,6 +12,10 @@ body {
 .navbar {
   background: white;
   padding: 1em;
+  position: fixed;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .navbar .logo {
@@ -58,20 +62,25 @@ section {
   text-align: center;
 }
 
-.left-col .subhead {
+.hero .hero-img {
+  width: 70%;
+  margin-top: 3em;
+}
+
+.hero .left-col .subhead {
   text-transform: uppercase;
   font-weight: bold;
   color: gray;
   letter-spacing: .3em;
 }
 
-.left-col h1 {
+.hero .left-col h1 {
   font-size: 2.5em;
   line-height: 1.3em;
   margin-top: .2em;
 }
 
-.left-col .primary-cta {
+.hero .left-col .primary-cta {
   background: var(--primary-color);
   color: white;
   text-decoration: none;
@@ -81,18 +90,13 @@ section {
   display: inline-block;
 }
 
-.left-col .watch-video-cta {
+.hero .left-col .watch-video-cta {
   display: block;
   margin: 1em 0 0 0;
 }
 
-.left-col .watch-video-cta img {
+.hero .left-col .watch-video-cta img {
   margin-right: .5em;
-}
-
-.hero-img {
-  width: 70%;
-  margin-top: 3em;
 }
 
 section.features-section {
