@@ -2,10 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 :root {
   --primary-color: #007af3;
+  --light-color: #f2f2f2;
+  --dark-color: #20272e;
 }
 
 body {
-  background: #f2f2f2;
+  background: var(--light-color);
   margin: 0;
   font-family: 'Poppins';
 }
@@ -97,6 +99,11 @@ section {
 .hero {
   text-align: center;
   background: black;
+  height: 100vh;
+}
+
+.hero .container {
+  padding-top: 5em;
 }
 
 .hero .left-col h1 {
@@ -162,6 +169,10 @@ section.about-section ul.expertise li {
   border-radius: 1em;
 }
 
+section.about-section ul.expertise li img {
+  width: 6em;
+}
+
 section.about-section div.about-links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -190,7 +201,7 @@ section.about-section div.about-links > a {
 }
 
 section.about-section div.about-links ul.about-links {
-  margin-top: 2em;
+  margin: 2em 0 1em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,40 +224,91 @@ section.about-section div.about-links ul.about-links li img {
   border-radius: 1em;
 }
 
-section.features-section {
-  background: #20272e;
+section.projects-section {
+  background: var(--dark-color);
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-ul.features-list {
-  margin: 0;
-  padding-left: .1em;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-}
-
-ul.features-list li {
-  font-size: 1.1em;
+section.projects-section .project-card {
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 400px;
+          flex: 1 1 400px;
+  background: var(--light-color);
+  color: var(--dark-color);
+  max-width: 500px;
+  min-width: 400px;
+  height: 600px;
+  z-index: 1;
   margin-bottom: 1em;
   margin-left: 2em;
-  position: relative;
+  -webkit-box-shadow: 2px 2px 4px black;
+          box-shadow: 2px 2px 4px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2em;
 }
 
-ul.features-list li:before {
-  content: '';
-  left: -2em;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-image: url("../images/bullet.svg");
-  background-size: contain;
-  margin-right: .5em;
-}
-
-.features-section img {
+section.projects-section .project-card.filler {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   display: none;
+}
+
+section.projects-section .project-card h3 {
+  font-size: 1.5em;
+}
+
+section.projects-section .project-card div.imgs-tech {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.projects-section .project-card div.imgs-tech img {
+  height: 2em;
+  margin: 0 1em 0 0;
+}
+
+section.projects-section .project-card img.img-project {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 200px;
+  height: 200px;
+}
+
+section.projects-section .project-card .seelive {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--light-color);
+  background: var(--primary-color);
+  text-align: center;
+  padding: 1em;
+  justify-self: flex-end;
+}
+
+section.projects-section .project-card .seelive:hover {
+  cursor: pointer;
 }
 
 .testimonials-section {
@@ -320,7 +382,7 @@ nav {
   width: 66%;
   right: 0;
   top: 0;
-  background: #20272e;
+  background: var(--dark-color);
   height: 100vh;
   padding: 1em;
 }
@@ -408,6 +470,9 @@ nav li a:hover {
     -webkit-filter: grayscale(70%);
             filter: grayscale(70%);
   }
+  section.projects-section .project-card.filler {
+    display: block;
+  }
 }
 
 @media only screen and (min-width: 1080px) {
@@ -452,13 +517,6 @@ nav li a:hover {
   }
   .features-section {
     position: relative;
-  }
-  .features-section img {
-    display: block;
-    position: absolute;
-    right: 0;
-    width: 350px;
-    bottom: -2em;
   }
   .testimonials-section ul {
     display: -webkit-box;
