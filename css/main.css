@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 :root {
   --primary-color: #007af3;
 }
@@ -10,12 +11,13 @@ body {
 }
 
 .navbar {
-  background: white;
+  background: #000;
   padding: 1em;
   position: fixed;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 999;
 }
 
 .navbar .logo-part {
@@ -27,7 +29,7 @@ body {
           align-items: center;
   text-decoration: none;
   font-weight: bold;
-  color: black;
+  color: #fff;
   font-size: 1.4em;
 }
 
@@ -70,29 +72,39 @@ ul {
 }
 
 section {
-  padding: 5em 2em;
+  padding: 3em 2em 7em 3em;
+}
+
+.subhead {
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--primary-color);
+  letter-spacing: .3em;
+}
+
+.subhead:before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 12px;
+  width: 60px;
+  height: 2px;
+  background-color: var(--primary-color);
 }
 
 .hero {
   text-align: center;
-}
-
-.hero .hero-img {
-  width: 70%;
-  margin-top: 3em;
-}
-
-.hero .left-col .subhead {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: gray;
-  letter-spacing: .3em;
+  background: black;
 }
 
 .hero .left-col h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   line-height: 1.3em;
   margin-top: .2em;
+  color: #fff;
+  font-family: 'Mate SC', serif;
 }
 
 .hero .left-col .primary-cta {
@@ -112,6 +124,93 @@ section {
 
 .hero .left-col .watch-video-cta img {
   margin-right: .5em;
+}
+
+section.about-section {
+  margin: 0;
+  position: relative;
+}
+
+section.about-section > .container > img {
+  display: none;
+}
+
+section.about-section ul.expertise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section.about-section ul.expertise li {
+  color: white;
+  padding: 0.5em;
+  background: var(--primary-color);
+  width: 10em;
+  height: 10em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  border-radius: 1em;
+}
+
+section.about-section div.about-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.about-section div.about-links > a {
+  padding-top: 0.2em;
+  text-decoration: none;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  background: var(--primary-color);
+  border-radius: 1em;
+}
+
+section.about-section div.about-links ul.about-links {
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+section.about-section div.about-links ul.about-links li {
+  margin-right: 1em;
+  height: 3em;
+  width: 3em;
+  border-radius: 1em;
+}
+
+section.about-section div.about-links ul.about-links li img {
+  border-radius: 1em;
 }
 
 section.features-section {
@@ -278,7 +377,7 @@ nav li a:hover {
     display: flex;
   }
   .navbar nav a {
-    color: black;
+    color: white;
     font-size: 1em;
     padding: .1em 1em;
   }
@@ -299,15 +398,22 @@ nav li a:hover {
     background: var(--primary-color);
     color: white;
   }
+  section.about-section > .container > img {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 200px;
+    bottom: -2em;
+    z-index: 1;
+    -webkit-filter: grayscale(70%);
+            filter: grayscale(70%);
+  }
 }
 
 @media only screen and (min-width: 1080px) {
   .container {
     width: 1080px;
     margin: 0 auto;
-  }
-  section {
-    padding: 10em 4em;
   }
   .hero .container {
     display: -webkit-box;
@@ -319,15 +425,11 @@ nav li a:hover {
     text-align: left;
   }
   .hero .container .left-col {
-    margin: 3em 3em 0 5em;
+    margin: 1em 1em 0 1em;
   }
   .hero .container .left-col h1 {
-    font-size: 3em;
-    width: 90%;
-  }
-  .hero-img {
-    width: 30%;
-    margin-right: 8em;
+    font-size: 4em;
+    width: 100%;
   }
   .hero-cta {
     display: -webkit-box;
