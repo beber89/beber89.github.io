@@ -147,34 +147,36 @@ section.about-section {
             }
         }
     }
-    div.about-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        &>a {
-            padding-top: 0.2em;
-            text-decoration: none;
-            flex-grow: 0;
-            width: 150px;
-            height: 30px;
-            text-align: center;
-            color: white;
+}
+div.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .download-cv {
+        color: var(--primary-color);
+        border: 3px solid var(--primary-color);
+        font-weight: bold;
+        border-radius: 5em;
+        text-decoration: none;
+        padding: 1em;
+        &:hover {
             background: var(--primary-color);
-            border-radius: 1em;
+            color: white;
         }
-        ul.about-links {
-            margin: 2em 0 1em 0;
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            li {
-                margin-right: 1em;
-                height: 3em;
-                width: 3em;
+    }
+    ul.contact-links {
+        margin: 2em 0 1em 0;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        li {
+            margin-right: 1em;
+            height: 3em;
+            width: 3em;
+            border-radius: 1em;
+            img {
+                width: 100%;
                 border-radius: 1em;
-                img {
-                    border-radius: 1em;
-                }
             }
         }
     }
@@ -185,8 +187,13 @@ section.about-section {
 section.projects-section {
     background: var(--dark-color);
     color: white;
-    display: flex;
-    flex-wrap: wrap;
+    .container {
+        display: block;
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
     .project-card {
         &.filler {
             background: transparent;
@@ -238,54 +245,6 @@ section.projects-section {
             }
         }
         
-    }
-}
-
-// ul.features-list {
-//     margin:0;
-//     padding-left: .1em;
-//     // come back to this
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-//     li {
-//         font-size: 1.1em;
-//         margin-bottom: 1em;
-//         margin-left: 2em;
-//         position: relative;
-//         &:before {
-//             content: '';
-//             left: -2em;
-//             position: absolute;
-//             width: 20px;
-//             height: 20px;
-//             background-image: url('../images/bullet.svg');
-//             background-size: contain;
-//             margin-right: .5em;
-//         }
-//     }
-// }
-
-// .features-section img {
-//     display: none;
-// }
-
-.testimonials-section {
-    background: var(--primary-color);
-    color: white;
-    li {
-        background: #0068D6;
-        text-align: center;
-        padding: 2em 1em;
-        width: 80%;
-        margin: 0 auto 5em auto;
-        border-radius: 1em;
-        img {
-            width: 5em;
-            height: 5em;
-            border: 5px solid #0068D6;
-            border-radius: 50%;
-            margin-top: -4.5em;
-        }
     }
 }
 
@@ -427,6 +386,15 @@ nav {
             display: block;
         }
     }
+    section.contact-section {
+        .contact-right {
+            padding: 0 0 0 5em;
+            h3 {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 1080px) {
@@ -456,68 +424,10 @@ nav {
         margin-right: 1em;
     }
 
-    ul.features-list {
-        display: block;
-        margin-left: 5em;
-
-        li {
-            font-size: 1.4em;
-            &:before {
-                width: 30px;
-                height: 30px;
-            }
-        }
-    }
-    .features-section {
-        position: relative;
-    }
-
-    .testimonials-section ul {
-        display: flex;
-
-        li {
-            margin: 0 1em;
-        }
-    }
-
     .contact-section {
         position: relative;
-        .container {
+        .contact-details {
             display: flex;
-        }
-    }
-    .contact-right {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 45%;
-        height: 100%;
-
-        iframe {
-            height: 100%
-        }
-    }
-}
-
-@media only screen and (min-width: 1450px) {
-    .features-section {
-        &:before {
-            content: '';
-            position: absolute;
-            width: 10%;
-            height: 20em;
-            background: var(--primary-color);
-            left: 0;
-            top: -4em
-        }
-        &:after {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 20em;
-            background: url('../images/dots.svg') no-repeat;
-            left: 4.5em;
-            top: 2em
         }
     }
 }
