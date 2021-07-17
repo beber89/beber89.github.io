@@ -118,6 +118,9 @@ section {
 
 .hero .left-col h1 {
   position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   font-size: 2em;
   line-height: 1.3em;
   margin-top: .2em;
@@ -187,6 +190,13 @@ section.about-section > .container > img {
   display: none;
 }
 
+section.about-section .img-coin {
+  height: 6em;
+  padding: 1em;
+  background: white;
+  border-radius: 3em;
+}
+
 section.about-section ul.expertise {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -204,8 +214,22 @@ section.about-section ul.expertise {
 }
 
 section.about-section ul.expertise li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   color: white;
-  padding: 0.5em;
+  padding: 1em;
+  border: 0.125em solid var(--dark-color);
   background: var(--primary-color);
   width: 10em;
   height: 10em;
@@ -215,7 +239,7 @@ section.about-section ul.expertise li {
 }
 
 section.about-section ul.expertise li img {
-  width: 6em;
+  width: 4em;
 }
 
 div.contact-links {
@@ -270,6 +294,15 @@ div.contact-links ul.contact-links li img {
   border-radius: 1em;
 }
 
+.subhead-desktop {
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--primary-color);
+  letter-spacing: .3em;
+}
+
 section.projects-section {
   background: var(--dark-color);
   color: white;
@@ -283,8 +316,13 @@ section.projects-section .container .projects-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 section.projects-section .project-card {
@@ -294,9 +332,8 @@ section.projects-section .project-card {
           flex: 1 1 400px;
   background: var(--light-color);
   color: var(--dark-color);
-  max-width: 500px;
-  min-width: 400px;
-  height: 600px;
+  width: 66vw;
+  height: 100vh;
   z-index: 1;
   margin-bottom: 1em;
   margin-left: 2em;
@@ -317,13 +354,6 @@ section.projects-section .project-card {
   padding: 2em;
 }
 
-section.projects-section .project-card.filler {
-  background: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  display: none;
-}
-
 section.projects-section .project-card h3 {
   font-size: 1.5em;
 }
@@ -335,6 +365,7 @@ section.projects-section .project-card div.imgs-tech {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 1em;
 }
 
 section.projects-section .project-card div.imgs-tech img {
@@ -346,7 +377,6 @@ section.projects-section .project-card img.img-project {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  width: 200px;
   height: 200px;
 }
 
@@ -362,6 +392,11 @@ section.projects-section .project-card .seelive {
 
 section.projects-section .project-card .seelive:hover {
   cursor: pointer;
+}
+
+section.projects-section h3 span a {
+  font-size: 0.75em;
+  color: var(--primary-color);
 }
 
 h2 {
@@ -501,8 +536,22 @@ nav li a:hover {
     -webkit-filter: grayscale(70%);
             filter: grayscale(70%);
   }
-  section.projects-section .project-card.filler {
-    display: block;
+  .subhead-desktop {
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--primary-color);
+    letter-spacing: .3em;
+  }
+  .subhead-desktop:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 12px;
+    width: 60px;
+    height: 2px;
+    background-color: var(--primary-color);
   }
   section.contact-section .contact-right {
     padding: 0 0 0 5em;
