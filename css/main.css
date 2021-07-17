@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap");
 :root {
   --primary-color: #007af3;
   --light-color: #f2f2f2;
   --dark-color: #20272e;
+  --beige-color: hsl(49 37% 94%);
+  --typewriter-speed: 3s;
+  --typewriter-delay: 1s;
+  --typewriter-characters: 18;
 }
 
 body {
@@ -106,12 +110,53 @@ section {
   padding-top: 5em;
 }
 
+.hero .left-col .subhead {
+  opacity: 0;
+  -webkit-animation: showup var(--typewriter-delay) forwards;
+          animation: showup var(--typewriter-delay) forwards;
+}
+
 .hero .left-col h1 {
-  font-size: 3em;
+  position: relative;
+  font-size: 2em;
   line-height: 1.3em;
   margin-top: .2em;
   color: #fff;
-  font-family: 'Mate SC', serif;
+  font-family: 'Syne Mono', monospace;
+}
+
+.hero .left-col h1::before, .hero .left-col h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hero .left-col h1::before {
+  background: black;
+  -webkit-animation: typewriter var(--typewriter-speed) steps(var(--typewriter-characters)) var(--typewriter-delay) forwards;
+          animation: typewriter var(--typewriter-speed) steps(var(--typewriter-characters)) var(--typewriter-delay) forwards;
+}
+
+.hero .left-col h1::after {
+  width: 0.125em;
+  background: var(--beige-color);
+  visibility: hidden;
+  -webkit-animation: typewriter var(--typewriter-speed) steps(var(--typewriter-characters)) var(--typewriter-delay) forwards, blink 1s infinite;
+          animation: typewriter var(--typewriter-speed) steps(var(--typewriter-characters)) var(--typewriter-delay) forwards, blink 1s infinite;
+}
+
+.hero .left-col h2 {
+  font-size: 2em;
+  line-height: 1.3em;
+  margin-top: .2em;
+  color: #fff;
+  font-family: 'Syne Mono', monospace;
+  opacity: 0;
+  -webkit-animation: showup 1s calc(var(--typewriter-speed) + var(--typewriter-delay) + 500ms) forwards;
+          animation: showup 1s calc(var(--typewriter-speed) + var(--typewriter-delay) + 500ms) forwards;
 }
 
 .hero .left-col .primary-cta {
@@ -504,6 +549,48 @@ nav li a:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+}
+
+@-webkit-keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes blink {
+  25% {
+    visibility: visible;
+  }
+  75% {
+    visibility: hidden;
+  }
+}
+
+@keyframes blink {
+  25% {
+    visibility: visible;
+  }
+  75% {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes showup {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showup {
+  to {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=main.css.map */

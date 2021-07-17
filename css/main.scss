@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');:root {
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap');
+:root {
     --primary-color: #007af3;
     --light-color: #f2f2f2;
     --dark-color: #20272e;
+    --beige-color: hsl(49 37% 94%);
+    --typewriter-speed: 3s;
+    --typewriter-delay: 1s;
+    --typewriter-characters: 18;
 }
 
 body {
@@ -93,12 +98,50 @@ section {
         padding-top: 5em;
     }
     .left-col {
+        .subhead {
+            opacity: 0;
+            animation: showup var(--typewriter-delay) forwards
+        }
         h1 {
-            font-size: 3em;
+            position: relative;
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+            }
+            &::before {
+                background: black;
+                animation: typewriter var(--typewriter-speed)
+                  steps(var(--typewriter-characters)) var(--typewriter-delay) forwards;
+              }
+              
+            &::after {
+                width: 0.125em;
+                background: var(--beige-color);
+                visibility: hidden;
+                animation: 
+                  typewriter var(--typewriter-speed)
+                    steps(var(--typewriter-characters)) var(--typewriter-delay) forwards,
+                  blink 1s  infinite;
+            }
+            font-size: 2em;
             line-height: 1.3em;
             margin-top: .2em;
             color: #fff;
-            font-family: 'Mate SC', serif;
+            font-family: 'Syne Mono', monospace;
+        }
+        h2 {
+            font-size: 2em;
+            line-height: 1.3em;
+            margin-top: .2em;
+            color: #fff;
+            font-family: 'Syne Mono', monospace;
+            opacity: 0;
+            animation: showup 1s calc(var(--typewriter-speed) + var(--typewriter-delay) + 500ms) forwards;
         }
     
         .primary-cta {
@@ -431,3 +474,27 @@ nav {
         }
     }
 }
+
+
+
+
+@keyframes typewriter {
+    to {
+      left: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    25% {
+       visibility: visible;
+    }
+    75% {
+        visibility: hidden;
+     }
+  }
+
+  @keyframes showup {
+    to {
+       opacity: 1;
+    }
+  }
