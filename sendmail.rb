@@ -1,9 +1,9 @@
 require 'mail'
 
-options = { :address              => "smtp.gmail.com",
+options = { :address              => "smtp-mail.outlook.com",
             :port                 => 587,
-            :user_name            => 'ece.mahmoud@gmail.com',
-            :password             => 'achilles89troy',
+            :user_name            => 'baibars.dev@outlook.com',
+            :password             => '',
             :authentication       => 'plain',
             :enable_starttls_auto => true  }
 
