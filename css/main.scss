@@ -265,7 +265,7 @@ section.projects-section {
         flex: 1 1 400px;
         background: var(--light-color);
         color: var(--dark-color);
-        width: 66vw;
+        width: 80vw;
         height: 100vh;
         z-index: 1;
         margin-bottom: 1em;
@@ -281,6 +281,7 @@ section.projects-section {
         }
         div.imgs-tech {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             margin-bottom: 1em;
             img {
@@ -290,7 +291,7 @@ section.projects-section {
         }
         img.img-project {
             align-self: center;
-            height: 200px;
+            height: 160px;
         }
         .seelive {
             text-decoration: none;
@@ -462,6 +463,12 @@ nav {
         font-weight: bold;
         color: var(--primary-color);
         letter-spacing: .3em;
+    }
+    .project-card {
+        width: 66vw !important;
+    }
+    img.img-project {
+        height: 200px !important;
     }
     section.contact-section {
         .contact-right {
